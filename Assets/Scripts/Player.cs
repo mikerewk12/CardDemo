@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static Assets.Scripts.Constants;
 
 public class Player : MonoBehaviour
 {
@@ -19,12 +20,20 @@ public class Player : MonoBehaviour
 
     public void BetAmountUp()
     {
-        UpdateBetAmount(BetAmount * 2);
+        float newValue = BetAmount * 2;
+        if(newValue <= MAX_BET_AMOUNT)
+        {
+            UpdateBetAmount(BetAmount * 2);
+        }
     }
 
     public void BetAmountDown()
     {
-        UpdateBetAmount(BetAmount / 2);
+        float newValue = BetAmount / 2;
+        if(newValue >= MIN_BET_AMOUNT)
+        {
+            UpdateBetAmount(BetAmount / 2);
+        }
     }
 
     private void UpdateBetAmount(float newAmount)

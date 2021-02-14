@@ -6,8 +6,8 @@ using static Assets.Scripts.Constants;
 
 public class Card : MonoBehaviour
 {
-    public const int SUIT_INDEX = 1;
-    public const int STRING_INDEX = 2;
+    private const int SUIT_INDEX = 1;
+    private const int STRING_INDEX = 2;
 
     public string Suit;
     public string StringValue;
@@ -15,6 +15,7 @@ public class Card : MonoBehaviour
 
     void Awake()
     {
+        // prebab naming convention is: Card_club_A
         string[] ar = gameObject.name.Split(char.Parse("_"));
         Suit = ar[SUIT_INDEX];
         StringValue = ar[STRING_INDEX];
@@ -26,49 +27,49 @@ public class Card : MonoBehaviour
         {
             if (sceneName == GameType.BlackJack)
             {
-                if (StringValue == "A")
+                if (StringValue == FaceCards.Ace)
                 {
                     IntValue = 1;
                 }
-                else if (StringValue == "K" || StringValue == "Q" || StringValue == "J")
+                else if (StringValue == FaceCards.King || StringValue == FaceCards.Queen || StringValue == FaceCards.Jack)
                 {
                     IntValue = 10;
                 }
             }
             else if (sceneName == GameType.HighLow)
             {
-                if (StringValue == "A")
+                if (StringValue == FaceCards.Ace)
                 {
                     IntValue = 1;
                 }
-                else if (StringValue == "K")
+                else if (StringValue == FaceCards.King)
                 {
                     IntValue = 13;
                 }
-                else if (StringValue == "Q")
+                else if (StringValue == FaceCards.Queen)
                 {
                     IntValue = 12;
                 }
-                else if (StringValue == "J")
+                else if (StringValue == FaceCards.Jack)
                 {
                     IntValue = 11;
                 }
             }
             else if (sceneName == GameType.Poker)
             {
-                if (StringValue == "A")
+                if (StringValue == FaceCards.Ace)
                 {
                     IntValue = 14;
                 }
-                else if (StringValue == "K")
+                else if (StringValue == FaceCards.King)
                 {
                     IntValue = 13;
                 }
-                else if (StringValue == "Q")
+                else if (StringValue == FaceCards.Queen)
                 {
                     IntValue = 12;
                 }
-                else if (StringValue == "J")
+                else if (StringValue == FaceCards.Jack)
                 {
                     IntValue = 11;
                 }

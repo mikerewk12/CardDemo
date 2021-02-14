@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using static Assets.Scripts.Constants;
 
 public class Dealer_BlackJack : DealerBase
 {
@@ -225,7 +226,7 @@ public class Dealer_BlackJack : DealerBase
     {
         // TODO: find a better way to do this
         int total = hand.Select(m => m.IntValue).Sum();
-        Card ace = hand.Where(m => m.StringValue == "A").FirstOrDefault();
+        Card ace = hand.Where(m => m.StringValue == FaceCards.Ace).FirstOrDefault();
 
         if (ace != null)
         {
