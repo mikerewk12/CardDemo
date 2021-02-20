@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,7 +37,7 @@ public class Card : MonoBehaviour
                     IntValue = 10;
                 }
             }
-            else if (sceneName == GameType.HighLow)
+            else if (sceneName == GameType.HighLow || sceneName == GameType.HighLowPoker)
             {
                 if (StringValue == FaceCards.Ace)
                 {
@@ -73,6 +74,10 @@ public class Card : MonoBehaviour
                 {
                     IntValue = 11;
                 }
+            } 
+            else
+            {
+                throw new Exception("Game type not found. Define a new game type and add it to Card so we can determine the values properly.");
             }
         }
     }
