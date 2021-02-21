@@ -7472,6 +7472,9 @@ MonoBehaviour:
   Rain: {fileID: 642278143}
   AudioListener: {fileID: 0}
   Background: {fileID: 297319403}
+  AudioGood: {fileID: 8300000, guid: f9fa5d4813b784a4a9c24b848c087e59, type: 3}
+  AudioBad: {fileID: 8300000, guid: 7f83743dd7cf3fa43b00f64e1dfceab6, type: 3}
+  AudioCheer: {fileID: 8300000, guid: 4d3b750eb395726479844c15feb81005, type: 3}
 --- !u!82 &1768393287
 AudioSource:
   m_ObjectHideFlags: 0
